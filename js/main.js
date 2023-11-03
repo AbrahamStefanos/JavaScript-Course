@@ -1,21 +1,28 @@
-if (playerOne === computer) {
-  //tie game!
-} else if (playerOne === "rock") {
+let playerOne = "scissors";
+let computer = "rock";
+
+switch (playerOne) {
+  case computer:
+    console.log("Tie game!");
+    break;
+  case "rock":
     if (computer === "paper") {
-      // computer wins
+      console.log("computer wins!");
     } else {
-      //playerOne wins
+      console.log("playerOne wins!");
     }
-} else if (playerOne === "paper") {
-    if (computer === "scissors"){
-      // computer wins
+    break;
+  case "paper":
+    if (computer === "scissors") {
+      console.log("computer wins!");
     } else {
-      //playerOne wins
+      console.log("playerOne wins!");
     }
-} else {
-    if (computer === "rock"){
-      // computer wins
+    break;
+  default:
+    if (computer === "rock") {
+      console.log("computer wins!");
     } else {
-      //playerOne wins
+      console.log("playerOne wins!");
     }
 }
