@@ -1,6 +1,4 @@
-console.log(Math.floor(Math.random() * 10) + 1);
-console.log(Math.floor(Math.random() * 10) + 1);
-console.log(Math.floor(Math.random() * 10) + 1);
-console.log(Math.floor(Math.random() * 10) + 1);
-console.log(Math.floor(Math.random() * 10) + 1);
-console.log(Math.floor(Math.random() * 10) + 1);
+const MyName = "Abraham";
+index = Math.floor(Math.random() * MyName.length);
+console.log(MyName.charAt(index));
+
