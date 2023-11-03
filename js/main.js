@@ -1,2 +1,1 @@
-const myVariable = "Mathematic";
-console.log("Every good boy does fine".split(" "));
+console.log(isNaN("Dave"));
