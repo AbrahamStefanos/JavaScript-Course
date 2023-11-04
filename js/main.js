@@ -1,26 +1,18 @@
-var x = 1;
-let y = 2;
-const z = 3;
+const equipShelfA = ["baseball", "football", "volleyball"];
+const equipShelfB = ["basketball", "golf balls", "tennis balls"];
 
-console.log(`global: ${x}`);
-console.log(`global: ${y}`);
-console.log(`global: ${z}`);
+const clothesShelfA = ["tank tops", "t-shirts", "jerseys"];
+const clothesShelfB = ["sweat tops", "sweat pants", "hoodies"];
 
-function myFunc() {
-  var x = 10;
-  const z = 5;
-  {
-    var x = 11;
-    const z = 6;
-    console.log(`block: ${x}`);
-    console.log(`block: ${y}`);
-    console.log(`block: ${z}`);
-  }
-  console.log(`function: ${x}`);
-  console.log(`function: ${y}`);
-  console.log(`function: ${z}`);
+console.log(equipShelfA[1]);
+console.log(clothesShelfB[0]);
 
-  
-}
+const equipDept = [equipShelfA, equipShelfB];
+const clothesDept = [clothesShelfA, clothesShelfB];
 
-myFunc();
+console.log(equipDept[0][1]);
+console.log(clothesDept[1][0]);
+
+const sportsStore = [equipDept, clothesDept];
+console.log(sportsStore[0][0][1]);
+console.log(sportsStore[1][1][0]);
