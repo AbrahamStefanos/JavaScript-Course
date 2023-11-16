@@ -1,8 +1,21 @@
-import * as Guitars from "./guitars.js"
-import User from "./user.js";
-const me = new User("email@email.com", "Abraham");
-console.log(me);
-console.log(me.greeting());
-console.log(Guitars.playGuitar());
-console.log(Guitars.shredding());
-console.log(Guitars.plucking());
+import { posts } from "./posts.js";
+
+posts.forEach((post) => {
+  console.log(post);
+});
+console.clear();
+
+const filteredposts = posts.filter(post => {
+  return post.userId === 1;
+});
+console.log(filteredposts);
+
+const mappedPosts = filteredposts.map(post => {
+  return post.id * 10;
+});
+console.log(mappedPosts);
+
+const reducedPostsValue = mappedPosts.reduce((sum, post) => {
+  return sum + post;
+});
+console.log(reducedPostsValue);
