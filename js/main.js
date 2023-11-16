@@ -1,22 +1,16 @@
-
-
-document.addEventListener("readystatechange", (event) => {
-  if(event.target.readyState === "complete") {
-    console.log("readyState: complete");
-    initApp();
+const myArray = ["eat", "sleep", "code"];
+const myObject = {
+  name: "Abraham",
+  hobbies: ["eat", "sleep", "code"],
+  logName: function() {
+    console.log(this.name);
   }
-});
-
-const initApp = () => {
-  const view1 = document.getElementById("view1");
-  const view3 = document.querySelector("#view3");
-  view1.style.display = "none";
-  view3.style.display = "flex";
-  const myForm = view3.querySelector("#myForm");
-  myForm.addEventListener("submit", (event => {
-    event.preventDefault();
-    console.log("submit event");
-  }));
 };
-  
+
+
+
+localStorage.setItem("myLocalStore", JSON.stringify(myArray));
+const storelength = localStorage.length;
+const myLocalData = JSON.parse(localStorage.getItem("myLocalStore"));
+console.log(storelength);
   
