@@ -1,16 +1,8 @@
-const myArray = ["eat", "sleep", "code"];
-const myObject = {
-  name: "Abraham",
-  hobbies: ["eat", "sleep", "code"],
-  logName: function() {
-    console.log(this.name);
-  }
-};
-
-
-
-localStorage.setItem("myLocalStore", JSON.stringify(myArray));
-const storelength = localStorage.length;
-const myLocalData = JSON.parse(localStorage.getItem("myLocalStore"));
-console.log(storelength);
-  
+import * as Guitars from "./guitars.js"
+import User from "./user.js";
+const me = new User("email@email.com", "Abraham");
+console.log(me);
+console.log(me.greeting());
+console.log(Guitars.playGuitar());
+console.log(Guitars.shredding());
+console.log(Guitars.plucking());
