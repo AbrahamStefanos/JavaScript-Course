@@ -1,21 +1,38 @@
-import { posts } from "./posts.js";
 
-posts.forEach((post) => {
-  console.log(post);
-});
-console.clear();
 
-const filteredposts = posts.filter(post => {
-  return post.userId === 1;
-});
-console.log(filteredposts);
+const getDataFromForm = () => {
+  const requestObj = {
+    firstName: "Bruce",
+    lastName: "Lee",
+    categories: ["nerdy"]
+  };
+  return requestObj;
+}
 
-const mappedPosts = filteredposts.map(post => {
-  return post.id * 10;
-});
-console.log(mappedPosts);
+const buildRequestUrl = (requestData) => {
+  return `http://api.icndb.com/jokes/random?firstName=${requestData.firstName}&
+  lastName=${requestData.lastName}&limitTo=${requestData.categories}`;
+}
 
-const reducedPostsValue = mappedPosts.reduce((sum, post) => {
-  return sum + post;
-});
-console.log(reducedPostsValue);
+const requestJoke = async(url) => {
+  const response = await fetch(url);
+  const jsonResponse = await response.json();
+  const joke = jsonResponse.value.joke
+  postJokeToPage(joke);
+}
+
+const postJokeToPage = (joke) => {
+  console.log(joke);
+}
+
+const processJokeRequest = async () => {
+  const requestData = getDataFromForm();
+  const requestUrl = buildRequestUrl(requestData);
+  await requestJoke(requestUrl);
+  console.log("finished!");
+}
+
+processJokeRequest();
+
+
+
